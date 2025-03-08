@@ -55,9 +55,11 @@ contract Assignment5 {
         // The memory keyword will be explained later
     // - Add a new user to the `users` array
     // - Update the `userNames` mapping with the address and name
-    function addUser() public{
+    function addUser(uint id, string name, address userAddress) public{
         // Fill in the logic
-
+        User user = User({id : id, name : name})
+        users.push(user);
+        userNames[userAddress] = name;
         // Hint: you have to use the keyword `memory` to define the struct
             // For example: User memory user
             // This keyword will be explained later
@@ -68,8 +70,8 @@ contract Assignment5 {
     // This function should:
     // - Be public and view
     // - Return the length of the `users` array
-    function getUserCount() {
+    function getUserCount() public view returns (uint){
         // Fill in the logic
-
+        return users.length;
     }
 }
