@@ -57,7 +57,7 @@ contract Assignment5 {
     // - Update the `userNames` mapping with the address and name
     function addUser(uint id, string name, address userAddress) public{
         // Fill in the logic
-        User user = User({id : id, name : name})
+        User user = User({id : id, name : name});
         users.push(user);
         userNames[userAddress] = name;
         // Hint: you have to use the keyword `memory` to define the struct
